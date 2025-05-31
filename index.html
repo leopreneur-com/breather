@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leopreneur - Breather</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Additional CSS Link for Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root">
+   
+    <nav id="topnav">
+        <div id="topnav-wrapper">
+            <div id="topnav_logo" title="Breather"> <i class="fas fa-heart"></i></div>
+            <div id="topnav_round"></div>
+            <div id="topnav_right">
+                <div id="topnav_right_info" title="App info"><i class="fas fa-info"></i></div>
+                <div id="topnav_right_finish" title="Tap to finish the exercise">FINISH</div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div id="app_info" class="hidden">
+        <div id="app_info_wrapper">
+            
+            <div id="app_info_close" title="Close modal window"><i class="fas fa-cut"></i></div>
+            <div id="app_info_content">
+                <h2>App info</h2>
+                <p>This is a guided breathing exercise application.</p>
+                <p>Before you start the exercise, sit or lie down, in a safe environment.</p>
+                <p><b>Note:</b> this breathing method can affect your motor control and, in rare cases, lead to loss of consciousness. You should never practice this method while standing, piloting a vehicle, or in or near bodies of water.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="container">
+
+        <div class="content" id="content_intro">
+            <div id="intro_start_wrapper" title="Tap to start the breath exercise" tabindex="1">
+                <div class="intro_bg" id="intro_border"></div>
+                <div class="intro_bg" id="intro_background"></div>
+                <div id="intro_text">Start</div>
+            </div>
+
+        </div>
+
+
+
+        <div class="content hidden" id="content_roundstart">
+            <div id="roundstart_wrapper">
+                <div id="roundstart_number"></div>
+                <div id="roundstart_text"></div>
+            </div>
+        </div>
+
+
+
+        <div class="content hidden" id="content_breath_cycle">
+            <p id="info_top">Take 30 deep breaths</p>
+            <div id="breather">
+                <div id="breathe_animator" class="exhale">
+                    <!-- <div id="breathe_animator_inner"></div> -->
+                </div>
+                <div id="breather_animator_number"></div>
+            </div>
+            <p id="info_bottom">Tap once to skip to retention</p>
+        </div>
+
+
+
+        <div class="content hidden" id="content_breath_retention">
+            <div id="retention_info_wrapper">
+                <div id="retention_info">HOLD BREATH</div>
+                <div id="retention_timer">
+                    <div id="retention_timer_minutes" class="zero_minutes">0</div>
+                    <div id="retention_timer_seconds">0</div>
+                </div>
+                <div id="retention_info_bottom">Tap once to finish <br>the retention</div>
+            </div>
+            <div id="retention_animator">
+                <div class="retention_bg" id="retention_border"></div>
+                <div class="retention_bg" id="retention_background"></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="content hidden" id="content_deep_inhale">
+            <div id="deep_inhale_info_intro" class="deep_inhale_info">Take a deep breath in and hold</div>
+            <div id="deep_inhale_info_exhale" class="deep_inhale_info">Let go.<br>Exhale.</div>
+            <div id="deep_inhale_timer">
+                <div id="deep_inhale_timer_seconds"></div>
+            </div>
+            <div id="deep_inhale_animator">
+                <div class="deep_inhale_bg" id="deep_inhale_border"></div>
+                <div class="deep_inhale_bg" id="deep_inhale_background"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="content hidden" id="content_finish">
+            <div class="finish_wrapper">
+                <div class="finish_title">Session finished</div>
+                <div class="finish_info">Take a breath and relax, regain your normal breathing speed. Here are your retention results</div>
+                <div id="finish_results">
+                    <table id="finish_results_table">
+                        <thead>
+                            <tr>
+                                <th>Round</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="finish_results_table_body">
+                            <!-- Round info to be appended here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button id="finish_reload" title="Reload app">Reload</button>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+</div> 
+
+  
+  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
